@@ -21,7 +21,7 @@ export default function Header() {
             onClick={() => setQuery("")}
           >
            <img
-              src="/images/Logo2.png" 
+              src="/Logo2.png" 
               alt="E-Shop Logo"
               width={100}
               height={60}

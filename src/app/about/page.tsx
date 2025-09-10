@@ -15,7 +15,7 @@ export default function AboutPage() {
       <div className="row align-items-center mb-5">
         <div className="col-md-6">
           <img
-            src="/images/mission.jpg"
+            src="/mission.jpg"
             alt="Our Mission"
             className="img-fluid rounded shadow-sm"
           />
@@ -32,7 +32,7 @@ export default function AboutPage() {
       <div className="row align-items-center mb-5 flex-md-row-reverse">
         <div className="col-md-6">
           <img
-            src="/images/vision.jpg"
+            src="/vision.jpg"
             alt="Our Vision"
             className="img-fluid rounded shadow-sm"
           />
