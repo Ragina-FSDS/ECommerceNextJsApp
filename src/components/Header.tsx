@@ -2,10 +2,13 @@
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
 import { useSearch } from "@/context/SearchContext";
+import { useRouter, usePathname } from "next/navigation";
 
 export default function Header() {
   const { cart } = useCart();
   const { query, setQuery } = useSearch();
+  const router = useRouter();
+  const pathname = usePathname();
 
   return (
     <header>
@@ -17,7 +20,13 @@ export default function Header() {
             className="navbar-brand fw-bold text-warning"
             onClick={() => setQuery("")}
           >
-            E-Shop
+           <img
+              src="/images/Logo2.png" 
+              alt="E-Shop Logo"
+              width={100}
+              height={60}
+              className="me-2"
+            />
           </Link>
 
           {/* Mobile toggle */}
@@ -59,17 +68,29 @@ export default function Header() {
             </ul>
 
             {/* Global Search */}
-            <input
-              type="search"
-              className="form-control mx-3 rounded-0"
-              placeholder="Search products..."
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
+            <div
+              className="d-flex mx-3 flex-grow-1"
               style={{ maxWidth: "600px" }}
-            />
+            >
+              <input
+                type="search"
+                className="form-control rounded-0 rounded-start"
+                placeholder="Search products..."
+                value={query}
+                onChange={(e) => {
+                  setQuery(e.target.value);
+                  if (pathname !== "/products") {
+                    router.push("/products");
+                  }
+                }}
+              />
+            </div>
 
             {/* Cart */}
-            <Link href="/cart" className="btn btn-outline-light position-relative">
+            <Link
+              href="/cart"
+              className="btn btn-outline-light position-relative"
+            >
               <i className="bi bi-cart-fill me-1"></i> Cart
               {cart.length > 0 && (
                 <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">

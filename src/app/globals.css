@@ -17,3 +17,6 @@ body {
 .navbar .nav-link:hover {
   color: #fbbf24 !important; /* Amazon yellow on hover */
 }
+.navbar {
+  background-color: lightblue !important;
+}

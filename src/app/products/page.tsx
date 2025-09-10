@@ -29,7 +29,7 @@ export default function ProductsPage() {
 
   return (
     <div className="container my-4">
-      {/* {query && <h2 className="mb-3">Results for "{query}"</h2>} */}
+      {query && <h2 className="mb-3">Results for "{query}"</h2>}
       {filtered.length > 0 ? (
         <div className="row g-3">
           {filtered.map(p => (
