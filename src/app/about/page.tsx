@@ -15,7 +15,7 @@ export default function AboutPage() {
       <div className="row align-items-center mb-5">
         <div className="col-md-6">
           <img
-            src="/mission.jpg"
+            src="/Mission.jpg"
             alt="Our Mission"
             className="img-fluid rounded shadow-sm"
           />
